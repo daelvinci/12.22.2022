@@ -12,11 +12,11 @@ namespace login
 
             do
             {
-                Console.WriteLine("1. User elave et ");
-                Console.WriteLine("2. Userlara bax");
-                Console.WriteLine("3. Userlar üzre axtarıs et");
-                Console.WriteLine("4. Menudan cix");
-                Console.WriteLine("");
+                Console.WriteLine("\n1. User elave et\n ");
+                Console.WriteLine("\n2. Userlara bax\n");
+                Console.WriteLine("\n3. Userlar üzre axtarıs et\n");
+                Console.WriteLine("\n4. Menudan cix\n");
+              
                 numStr = Console.ReadLine();
 
                 if (numStr == "1")
@@ -36,7 +36,7 @@ namespace login
                     ShowSearch(userArr, search);
                 }
 
-            } while (numStr != "4");
+            } while (numStr != "4\n");
         }
 
         static User[] InsertUser(ref User[] userArr, User user)
@@ -52,7 +52,7 @@ namespace login
 
             do
             {
-                Console.Write("Userin adini daxil edin: ");
+                Console.Write("\nUserin adini daxil edin: ");
                 usr.UserName = (Console.ReadLine());
                 Console.WriteLine("");
 
@@ -60,7 +60,7 @@ namespace login
 
             do
             {
-                Console.Write("Userin parolunu daxil edin: ");
+                Console.Write("\nUserin parolunu daxil edin: ");
                 usr.Password = Console.ReadLine();
                 Console.WriteLine("");
 
@@ -72,7 +72,7 @@ namespace login
         {
             for (int i = 0; i < userArr.Length; i++)
             {
-                Console.WriteLine($"Username: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
+                Console.WriteLine($"\nUsername: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
             }
         }
         static void ShowSearch(User[] userArr, string search)
@@ -81,11 +81,10 @@ namespace login
             {
                 if (userArr[i].UserName.ToLower().Contains(search.ToLower()))
                 {
-                    Console.WriteLine($"Username: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
+                    Console.WriteLine($"\nUsername: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
                 }
             }
         }
-
     }
 }
 
