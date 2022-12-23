@@ -1,0 +1,14 @@
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\bin\Debug\netcoreapp3.1\login.exe
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\bin\Debug\netcoreapp3.1\login.deps.json
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\bin\Debug\netcoreapp3.1\login.runtimeconfig.json
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\bin\Debug\netcoreapp3.1\login.runtimeconfig.dev.json
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\bin\Debug\netcoreapp3.1\login.dll
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\bin\Debug\netcoreapp3.1\login.pdb
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.csproj.AssemblyReference.cache
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.AssemblyInfoInputs.cache
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.AssemblyInfo.cs
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.csproj.CoreCompileInputs.cache
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.dll
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.pdb
+C:\Users\SONY\Desktop\12.22.2022\task\login interface\login\obj\Debug\netcoreapp3.1\login.genruntimeconfig.cache
