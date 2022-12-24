@@ -29,7 +29,6 @@ namespace login
             }
         }
 
-
         public User(string userName)
         {
         }

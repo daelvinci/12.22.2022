@@ -37,7 +37,6 @@ namespace login
                     else
                         Console.WriteLine("\nHal hazirda movcud bir user yoxdur");
                 }
-
             } while (numStr != "4\n");
         }
 
@@ -48,6 +47,7 @@ namespace login
 
             return userArr;
         }
+
         static User CreateUser()
         {
             User usr = new User(null);
@@ -70,6 +70,7 @@ namespace login
 
             return usr;
         }
+
         static void ShowUsers(User[] userArr)
         {
             if (userArr.Length != 0)
@@ -80,6 +81,7 @@ namespace login
             else
                 Console.WriteLine("\nHal hazirda movcud bir yoxdur");
         }
+
         static void ShowSearch(User[] userArr, string search)
         {
             bool hasUser = false;
