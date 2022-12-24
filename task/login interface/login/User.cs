@@ -10,7 +10,6 @@ namespace login
         public string UserName
         {
             get => _user_name;
-
             set
             {
                 if (IsUserNameOrPasswordOk(value) && LengthIsOkay(value))
@@ -21,7 +20,6 @@ namespace login
         public string Password
         {
             get => _password;
-
             set
             {
                 if (IsUserNameOrPasswordOk(value) && LengthIsOkay(value))
@@ -50,6 +48,7 @@ namespace login
                 if (char.IsDigit(input[i]))
                     return true;
             }
+
             Console.WriteLine("\nMinimum bir reqem daxil edin");
 
             return false;
@@ -62,6 +61,7 @@ namespace login
                 if (char.IsUpper(input[i]))
                     return true;
             }
+
             Console.WriteLine("\nMinimum 1 boyuk herf daxil edin");
 
             return false;
@@ -74,6 +74,7 @@ namespace login
                 if (char.IsLower(input[i]))
                     return true;
             }
+
             Console.WriteLine("\nMinimum 1 kicik herf daxil edin");
 
             return false;
