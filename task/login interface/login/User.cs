@@ -32,19 +32,16 @@ namespace login
 
         public User(string userName)
         {
-
         }
 
         public bool IsUserNameOrPasswordOk(string input)
         {
             if (!string.IsNullOrWhiteSpace(input))
+            {
                 if (HasDigit(input) && HasUpper(input) && HasLower(input))
                     return true;
-
-                else
-                    return false;
-
-            return true;
+            }
+                return false;
         }
 
         public bool HasDigit(string input)

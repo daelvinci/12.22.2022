@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace login
 {
@@ -16,24 +17,25 @@ namespace login
                 Console.WriteLine("\n2. Userlara bax\n");
                 Console.WriteLine("\n3. Userlar üzre axtarıs et\n");
                 Console.WriteLine("\n4. Menudan cix\n");
-              
+
                 numStr = Console.ReadLine();
 
                 if (numStr == "1")
-                {
                     InsertUser(ref userArr, CreateUser());
-                }
 
                 else if (numStr == "2")
-                {
                     ShowUsers(userArr);
-                }
 
                 else if (numStr == "3")
                 {
-                    Console.Write("Axtaris etmek istediyiniz deyeri daxil edin!");
-                    search = Console.ReadLine();
-                    ShowSearch(userArr, search);
+                    if (userArr.Length != 0)
+                    {
+                        Console.Write("\nAxtaris etmek istediyiniz deyeri daxil edin!");
+                        search = Console.ReadLine();
+                        ShowSearch(userArr, search);
+                    }
+                    else
+                        Console.WriteLine("\nHal hazirda movcud bir user yoxdur");
                 }
 
             } while (numStr != "4\n");
@@ -70,20 +72,29 @@ namespace login
         }
         static void ShowUsers(User[] userArr)
         {
-            for (int i = 0; i < userArr.Length; i++)
+            if (userArr.Length != 0)
             {
-                Console.WriteLine($"\nUsername: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
+                for (int i = 0; i < userArr.Length; i++)
+                    Console.WriteLine($"\nUsername: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
             }
+            else
+                Console.WriteLine("\nHal hazirda movcud bir yoxdur");
         }
         static void ShowSearch(User[] userArr, string search)
         {
+            bool hasUser = false;
+
             for (int i = 0; i < userArr.Length; i++)
             {
                 if (userArr[i].UserName.ToLower().Contains(search.ToLower()))
                 {
+                    hasUser = true;
                     Console.WriteLine($"\nUsername: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
                 }
             }
+
+            if (!hasUser)
+                Console.WriteLine("\nAxtariginiz user tapilmadi!");
         }
     }
 }
