@@ -10,7 +10,7 @@ namespace login
             string search;
             string numStr;
             User[] userArr = new User[0];
-
+          
             do
             {
                 Console.WriteLine("\nYalniz 1; 2; 3; 4; reqemleri daxil oluna biler\n");
@@ -37,7 +37,7 @@ namespace login
                     else
                         Console.WriteLine("\nHal hazirda movcud bir user yoxdur");
                 }
-            } while (numStr != "4\n");
+            } while (numStr != "4");
         }
 
         static User[] InsertUser(ref User[] userArr, User user)
