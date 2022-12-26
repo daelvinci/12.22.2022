@@ -30,7 +30,7 @@ namespace login
                 {
                     if (userArr.Length != 0)
                     {
-                        Console.Write("\nAxtaris etmek istediyiniz deyeri daxil edin!");
+                        Console.Write("\nAxtaris etmek istediyiniz deyeri daxil edin:  ");
                         search = Console.ReadLine();
                         ShowSearch(userArr, search);
                     }
