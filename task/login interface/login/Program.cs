@@ -13,11 +13,11 @@ namespace login
 
             do
             {
+                Console.WriteLine("\nYalniz 1; 2; 3; 4; reqemleri daxil oluna biler\n");
                 Console.WriteLine("\n1. User elave et\n ");
                 Console.WriteLine("\n2. Userlara bax\n");
                 Console.WriteLine("\n3. Userlar üzre axtarıs et\n");
                 Console.WriteLine("\n4. Menudan cix\n");
-
                 numStr = Console.ReadLine();
 
                 if (numStr == "1")
@@ -54,17 +54,15 @@ namespace login
 
             do
             {
-                Console.Write("\nUserin adini daxil edin: ");
+                Console.Write("\nUserin adini daxil edin: \n");
                 usr.UserName = (Console.ReadLine());
-                Console.WriteLine("");
 
             } while (usr.UserName == null);
 
             do
             {
-                Console.Write("\nUserin parolunu daxil edin: ");
+                Console.Write("\nUserin parolunu daxil edin: \n");
                 usr.Password = Console.ReadLine();
-                Console.WriteLine("");
 
             } while (usr.Password == null);
 

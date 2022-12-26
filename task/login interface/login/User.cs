@@ -12,7 +12,7 @@ namespace login
             get => _user_name;
             set
             {
-                if (IsUserNameOrPasswordOk(value) && LengthIsOkay(value))
+                if (IsUsernameIsOk(value))
                     _user_name = value;
             }
         }
@@ -22,7 +22,7 @@ namespace login
             get => _password;
             set
             {
-                if (IsUserNameOrPasswordOk(value) && LengthIsOkay(value))
+                if (IsPasswordOk(value) && IsPasswordLengthIsOkay(value))
                     _password = value;
             }
         }
@@ -31,14 +31,18 @@ namespace login
         {
         }
 
-        public bool IsUserNameOrPasswordOk(string input)
+        public bool IsPasswordOk(string input)
         {
             if (!string.IsNullOrWhiteSpace(input))
             {
-                if (HasDigit(input) && HasUpper(input) && HasLower(input))
+                if (HasUpper(input) && HasLower(input) && HasDigit(input))
                     return true;
             }
-                return false;
+
+            else
+                Console.WriteLine("\nPassword teyin olunmamis ve ya bosluq ola bilmez!");
+
+            return false;
         }
 
         public bool HasDigit(string input)
@@ -80,12 +84,29 @@ namespace login
             return false;
         }
 
-        public bool LengthIsOkay(string input)
+        public bool IsPasswordLengthIsOkay(string input)
         {
-            if ((input.Length >= 6 || input.Length >= 8) && input.Length <= 25)
+            if (input.Length >= 8 && input.Length <= 25)
                 return true;
 
-            Console.WriteLine("\nUsernamein uzunlugu 6 dan boyuk, parolun uzunlugu 8 den boyuk  25 den kicik olmalidir");
+            Console.WriteLine("\nParolun uzunlugu 8 den boyuk  25 den kicik olmalidir");
+
+            return false;
+        }
+
+        public bool IsUsernameIsOk(string input)
+        {
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (input.Length >= 6 && input.Length <= 25)
+                    return true;
+                else
+                    Console.WriteLine("\nUsername'in uzunlugu minimum 6, maksimum 25 ola biler!");
+
+                return false;
+            }
+
+            Console.WriteLine("\n Username bosluq ve ya teyin olunmamis ola bilmez!");
 
             return false;
         }
