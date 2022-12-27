@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Security;
+using System.Security.Cryptography.X509Certificates;
 
 namespace login
 {
@@ -10,7 +12,7 @@ namespace login
             string search;
             string numStr;
             User[] userArr = new User[0];
-          
+
             do
             {
                 Console.WriteLine("\nYalniz 1; 2; 3; 4; reqemleri daxil oluna biler\n");
@@ -33,6 +35,7 @@ namespace login
                         Console.Write("\nAxtaris etmek istediyiniz deyeri daxil edin:  ");
                         search = Console.ReadLine();
                         ShowSearch(userArr, search);
+
                     }
                     else
                         Console.WriteLine("\nHal hazirda movcud bir user yoxdur");
@@ -50,18 +53,17 @@ namespace login
 
         static User CreateUser()
         {
-            User usr = new User(null);
-
+            User usr = new User("000000");
             do
             {
-                Console.Write("\nUserin adini daxil edin: \n");
-                usr.UserName = (Console.ReadLine());
+                Console.Write("\nUsername daxil edin: \n");
+                usr.UserName = Console.ReadLine();
 
             } while (usr.UserName == null);
 
             do
             {
-                Console.Write("\nUserin parolunu daxil edin: \n");
+                Console.Write("\nParolu daxil edin: \n");
                 usr.Password = Console.ReadLine();
 
             } while (usr.Password == null);
@@ -74,7 +76,9 @@ namespace login
             if (userArr.Length != 0)
             {
                 for (int i = 0; i < userArr.Length; i++)
-                    Console.WriteLine($"\nUsername: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
+                {
+                    userArr[i].GetInfo();
+                }                
             }
             else
                 Console.WriteLine("\nHal hazirda movcud bir yoxdur");
@@ -83,13 +87,14 @@ namespace login
         static void ShowSearch(User[] userArr, string search)
         {
             bool hasUser = false;
+            search = search.ToLower();
 
             for (int i = 0; i < userArr.Length; i++)
             {
-                if (userArr[i].UserName.ToLower().Contains(search.ToLower()))
+                if (userArr[i].UserName.ToLower().Contains(search))
                 {
                     hasUser = true;
-                    Console.WriteLine($"\nUsername: {userArr[i].UserName} -  Yaranma tarixi: {userArr[i].Time}");
+                    userArr[i].GetInfo();
                 }
             }
 
